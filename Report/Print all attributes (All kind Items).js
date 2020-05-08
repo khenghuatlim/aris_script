@@ -1,4 +1,5 @@
 //Based on ARIS 10 SR1
+//KH Lim. Contact: khenghuatlim@gmail.com
 //Description : Print all attributes of selected items (eg. Groups/Models/Object Occurrences, Object Definitions
 //Context: Groups/Models/Object (occurrences/definitions)
 

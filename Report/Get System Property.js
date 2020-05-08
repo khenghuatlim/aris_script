@@ -1,4 +1,5 @@
 //Based on ARIS 10 SR1
+//KH Lim. Contact: khenghuatlim@gmail.com
 //System.getProperty - this disabled by ARIS
 //Below solution is work around to get the properties
 

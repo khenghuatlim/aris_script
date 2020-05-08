@@ -1,4 +1,5 @@
 //Based on ARIS 10 SR1
+//KH Lim. Contact: khenghuatlim@gmail.com
 //Description : Get list of successors or predecessors on seleced Object. Another print out, together with the connection type
 //Context: Object > Object Occ
 
