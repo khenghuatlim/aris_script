@@ -28,7 +28,7 @@ function main() {
 function startUpdateSheet(sheet, group) {
     
     var arChild = group.Childs(true);
-    arChild.unshift(group);
+    arChild.unshift(group); //append - put as last, unshift park at first element
     var row = 3;
     for(var a=0; a<arChild.length;a++) {
         WriteToRowWithStyle(sheet, row, 0, arChild[a].Name(g_nloc));
@@ -58,6 +58,7 @@ function subReadFromXls(sheet, row, column){
 
 
 //sample style creation
+//var cellFont3 = gWorkBook.getFont("Calibri", 8, RGB(255,0,0), false, false, false, false, Constants.XL_FONT_SS_NONE);
 //cellStyleRed = gWorkBook.createCellStyle(cellFont3,0,0,0,0,RGB(255,0,0),RGB(255,0,0),RGB(255,0,0),RGB(255,0,0), Constants.ALIGN_LEFT, Constants.VERTICAL_CENTER, Constants.C_TRANSPARENT,Constants.C_TRANSPARENT,Constants.SOLID_FOREGROUND);
 function WriteToRowWithStyle(sheet, row, column, value, cStyle, valueType){
     var objExcelRow= sheet.getRowAt(row);
@@ -111,9 +112,16 @@ function errorCatch(ex){
 
 function subUploadExcelFile(){
     var fileFormat = "*.xls!!Worksheet Files |*.xls;*.xlsx|Chart Files |*.xlc|Data Files |*.xlc; *.xls|";
-    var selFiles = Dialogs.getFilePath("",fileFormat, "", "Select Excel file to load" ,0 );
+    var selFiles = Dialogs.getFilePath("",fileFormat, "", "Select Excel file to load" ,0);
     if (selFiles != null && selFiles.length > 0) {
         return selFiles[0];
     }
     return null;
+}
+
+
+
+//RGB(255,0,0)
+function RGB(r, g, b) {
+	return (new java.awt.Color(r/255.0,g/255.0,b/255.0,1)).getRGB() & 0xFFFFFF
 }
